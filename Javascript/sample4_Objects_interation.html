@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <script>
+      var person = {
+        fname: "Chanel",
+        lname: "Mann",
+        tel: "(249)692-5577",
+        address: "9625 Placerat St",
+        city: "Blue Springs",
+        state: "MN",
+        zip: 70676
+      };
+
+      var results = "";
+
+      for (a in person) {
+        results = results + person[a] + "<br>";
+      }
+
+      document.getElementById("demo").innerHTML = results;
+    </script>
+  </body>
+</html>

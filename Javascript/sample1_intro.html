@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="heading">Hello world From Document</h1>
+    <div id="demo"></div>
+    <button onclick="changeColor()">Change Color</button>
+
+    <script>
+      function changeColor() {
+        document.getElementById("heading").style.color = "red";
+      }
+
+      var a = 10;
+      var b = 20;
+      var c = a + b;
+
+      //   window.alert(c);
+      document.write(c);
+      document.getElementById("demo").innerHTML = c;
+
+      console.log(c);
+    </script>
+  </body>
+</html>

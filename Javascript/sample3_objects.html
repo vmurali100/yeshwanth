@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // {} respresents it is An Empty Object
+      var person = {
+        fname: "Murali"
+      };
+      //Adding Properties and Values with . notation
+      person.fullNmae = "";
+
+      console.log(person);
+
+      //Adding a Property with [] notation
+      person["city"] = "Bangalore";
+      //   after some code
+      person.fullNmae = "Murali Krishna";
+
+      delete person.fname;
+
+      var newPerson = {
+        fname: "Chanel",
+        lname: "Mann",
+        tel: "(249)692-5577",
+        address: "9625 Placerat St",
+        city: "Blue Springs",
+        state: "MN",
+        zip: 70676
+      };
+      for (a in newPerson) {
+        console.log(newPerson[a]);
+      }
+      console.log(person);
+    </script>
+  </body>
+</html>
