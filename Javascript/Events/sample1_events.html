@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <button onclick="sayHello()">Click</button> -->
+    <button id="myBtn">Click</button>
+
+    <ul
+      onclick="getCityName(event)"
+      id="myUl"
+      onmouseover="changeColor(event)"
+      onmouseout="changeColor(event)"
+    >
+      <li>Bangalore</li>
+      <li>Kochin</li>
+      <li>Hyderabad</li>
+      <li>Amaravathi</li>
+    </ul>
+    <script>
+      function sayHello() {
+        console.log("sayHello func is called");
+      }
+
+      function getCityName(event) {
+        console.log(event.target.innerHTML);
+
+        document.getElementById("myUl").onclick = function() {
+          document
+            .getElementById("myUl")
+            .removeEventListener("click", getCityName);
+        };
+      }
+
+      function changeColor(event) {
+        if (event.target.style.color == "red") {
+          event.target.style.color = "";
+        } else {
+          event.target.style.color = "red";
+        }
+      }
+
+      //   document.getElementById("myUl").onclick = getCityName;
+      document
+        .getElementById("myUl")
+        .setAttribute("onmouseover", "changeColor(event)");
+      document.getElementById("myBtn").addEventListener("click", getCityName);
+    </script>
+  </body>
+</html>

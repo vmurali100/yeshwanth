@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Declaring a Named Function
+      //   function sayHello() {
+      //     console.log("sayHello() is called");
+      //   }
+
+      // function expression -- assigning a Unnonymos function to a Variable
+      //   let sayHello = function() {
+      //     console.log("sayHello() called");
+      //   };
+
+      //   Assigning a named function to a Variable
+
+      //   sayHello = function sayHi() {
+      //     console.log("Say Hi from Say HI Function");
+      //   };
+      //   sayHello();
+
+      // Self Invoking Function or Immedietly invoked Function
+      //   (function() {
+      //     console.log("Hello World");
+      //   })();
+
+      //   var sameFunc = (function() {
+      //     return "Hello World";
+      //   })();
+
+      //   console.log(sameFunc);
+
+      //   var someFunc = new Function();
+      //   console.log(someFunc);
+
+      //   const sayHello = () => {
+      //     console.log("Hello world");
+      //   };
+
+      //   sayHello();
+
+      function multiply(a) {
+        return b => {
+          return c => {
+            console.log(a, b, c);
+            return a * b * c;
+          };
+        };
+      }
+      console.log(multiply(10)(20)(30));
+    </script>
+  </body>
+</html>
