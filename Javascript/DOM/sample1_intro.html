@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="fname" />
+    <button onclick="getValues()" disabled id="myBtn">Get Values</button><br />
+    <span style="color: red; display: none;" id="warning"
+      >Please enter Minimum 6 Characters</span
+    >
+
+    <script>
+      var myInput = document.getElementById("fname");
+      function getValues() {
+        var userEntered = myInput.value;
+      }
+
+      function validate() {
+        var values = myInput.value;
+        console.log(values);
+        if (values.length > 5) {
+          document.getElementById("myBtn").disabled = false;
+        } else {
+          document.getElementById("myBtn").disabled = true;
+        }
+        checkLength();
+      }
+
+      function showWarning() {
+        document.getElementById("warning").style.display = "block";
+        checkLength();
+      }
+
+      function checkLength() {
+        var values = myInput.value;
+        if (values.length > 5) {
+          document.getElementById("warning").style.display = "none";
+        } else {
+          document.getElementById("warning").style.display = "block";
+        }
+      }
+
+      function hideWarning() {
+        var values = myInput.value;
+        if (values.length == 0) {
+          document.getElementById("warning").style.display = "none";
+        }
+      }
+      //Adding Event Handler with DOM method
+      myInput.onkeyup = validate;
+      myInput.onfocus = showWarning;
+      myInput.onblur = hideWarning;
+    </script>
+  </body>
+</html>
