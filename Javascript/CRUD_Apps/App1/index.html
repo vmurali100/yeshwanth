@@ -31,6 +31,22 @@
                 aria-describedby="emailHelp"
               />
             </div>
+            <label for="gender">Gender</label> <br />
+
+            <input type="radio" name="gender" value="Male" /> Male
+            <input type="radio" name="gender" value="Female" />Female
+            <div class="form-group">
+              <label for="subject">Subject</label> <br />
+              <input type="checkbox" name="subject" id="" value="HTML" />HTML
+              <input type="checkbox" name="subject" id="" value="CSS" />CSS
+              <input type="checkbox" name="subject" id="" value="JS" />JS
+              <input
+                type="checkbox"
+                name="subject"
+                id=""
+                value="Angular"
+              />Angular
+            </div>
 
             <button type="button" class="btn btn-primary" onclick="addUser()">
               Submit
@@ -53,6 +69,8 @@
                 <th>First</th>
                 <th>Last</th>
                 <th>Email</th>
+                <th>Gender</th>
+                <th>Subjects</th>
                 <th>Edit</th>
                 <th>Delete</th>
               </tr>

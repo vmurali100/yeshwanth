@@ -3,7 +3,8 @@ function addUser() {
   var person = {
     fname: "",
     lname: "",
-    email: ""
+    email: "",
+    gender: ""
   };
 
   //Capturing all values from HTML in DOM method
@@ -16,6 +17,12 @@ function addUser() {
   //   for (a in person) {
   //     person[a] = document.getElementById(a).value;
   //   }
+  var allRadioBtns = document.getElementsByName("gender");
+  allRadioBtns.forEach(function(element) {
+    if (element.checked) {
+      person.gender = element.value;
+    }
+  });
   users.push(person);
   displayAllUsers(users);
   clearForm(person);
@@ -53,7 +60,14 @@ function displayAllUsers(data) {
 
 function clearForm(person) {
   for (a in person) {
-    document.getElementById(a).value = "";
+    if (a !== "gender") {
+      document.getElementById(a).value = "";
+    } else if (a == "gender") {
+      var allRadio = document.getElementsByName("gender");
+      allRadio.forEach(function(element) {
+        element.checked = false;
+      });
+    }
   }
 }
 
