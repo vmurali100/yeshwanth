@@ -16,11 +16,21 @@
           <form>
             <div class="form-group">
               <label for="fname">First Name</label>
-              <input type="text" class="form-control" id="fname" />
+              <input
+                type="text"
+                class="form-control"
+                id="fname"
+                onkeyup="validateForm()"
+              />
             </div>
             <div class="form-group">
               <label for="lname">Last Name</label>
-              <input type="text" class="form-control" id="lname" />
+              <input
+                type="text"
+                class="form-control"
+                id="lname"
+                onkeyup="validateForm()"
+              />
             </div>
             <div class="form-group">
               <label for="email">Email address</label>
@@ -28,28 +38,42 @@
                 type="email"
                 class="form-control"
                 id="email"
-                aria-describedby="emailHelp"
+                onkeyup="validateForm()"
               />
             </div>
             <label for="gender">Gender</label> <br />
 
-            <input type="radio" name="gender" value="Male" /> Male
-            <input type="radio" name="gender" value="Female" />Female
+            <input
+              type="radio"
+              name="gender"
+              value="Male"
+              onchange="validateForm()"
+            />
+            Male
+            <input
+              type="radio"
+              name="gender"
+              value="Female"
+              onchange="validateForm()"
+            />Female
             <div class="form-group">
               <label for="subject">Subject</label> <br />
-              <input type="checkbox" name="subject" id="" value="HTML" />HTML
-              <input type="checkbox" name="subject" id="" value="CSS" />CSS
-              <input type="checkbox" name="subject" id="" value="JS" />JS
-              <input
-                type="checkbox"
-                name="subject"
-                id=""
-                value="Angular"
-              />Angular
+              <input type="checkbox" name="subject" value="HTML" />HTML
+              <input type="checkbox" name="subject" value="CSS" />CSS
+              <input type="checkbox" name="subject" value="JS" />JS
+              <input type="checkbox" name="subject" value="Angular" />Angular
             </div>
 
-            <button type="button" class="btn btn-primary" onclick="addUser()">
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="addUser()"
+              id="myBtn"
+            >
               Submit
+            </button>
+            <button onclick="clearForm()" type="button" class="btn btn-warning">
+              Reset
             </button>
           </form>
         </div>
