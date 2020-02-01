@@ -1,3 +1,27 @@
 {
-  "users": []
+  "users": [
+    {
+      "fname": "Murali",
+      "lname": "Krishna",
+      "email": "vmurali100@gmail.com",
+      "gender": "Male",
+      "subjects": [
+        "CSS",
+        "JS",
+        "Angular"
+      ],
+      "id": 1
+    },
+    {
+      "fname": "Murali",
+      "lname": "K",
+      "email": "vmurali@gmail.com",
+      "gender": "Male",
+      "subjects": [
+        "JS",
+        "Angular"
+      ],
+      "id": 2
+    }
+  ]
 }
