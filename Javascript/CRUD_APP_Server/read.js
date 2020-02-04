@@ -41,7 +41,3 @@ function displayAllUsers(data) {
     document.getElementById("myTable").appendChild(myTr);
   }
 }
-
-function editUser(i) {
-  console.log(user);
-}

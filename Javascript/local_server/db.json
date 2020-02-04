@@ -11,17 +11,6 @@
         "Angular"
       ],
       "id": 1
-    },
-    {
-      "fname": "Murali",
-      "lname": "K",
-      "email": "vmurali@gmail.com",
-      "gender": "Male",
-      "subjects": [
-        "JS",
-        "Angular"
-      ],
-      "id": 2
     }
   ]
 }
