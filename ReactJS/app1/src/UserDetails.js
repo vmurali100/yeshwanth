@@ -10,6 +10,7 @@ export const UserDetails = ({ allUsers, deleteUser, isDelete }) => {
           <p>User UserName: {user.username}</p>
           <p>User Password : {user.password}</p>
           <br />
+          <br />
           {isDelete && (
             <button
               onClick={() => {
