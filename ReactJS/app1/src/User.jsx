@@ -11,6 +11,8 @@ export default class User extends Component {
         email: "",
       },
       users: [],
+      isEdit: false,
+      index: null,
     };
   }
 
@@ -27,6 +29,7 @@ export default class User extends Component {
     let { users } = this.state;
     users.push(this.state.user);
     this.setState({ users });
+    localStorage.setItem("users", JSON.stringify(users));
     this.handleClear();
   };
 
@@ -37,8 +40,34 @@ export default class User extends Component {
     }
     this.setState({ user });
   };
+
+  handleDelete = (i) => {
+    let users = this.state.users.filter((user, index) => index !== i);
+    this.setState({ users }, () => {
+      console.log("User Deleted");
+    });
+    localStorage.setItem("users", JSON.stringify(users));
+  };
+  // This method will trigger once Component Loads or Refreshes
+  componentDidMount() {
+    let users = JSON.parse(localStorage.getItem("users"));
+    if (users) {
+      this.setState({ users });
+    }
+  }
+  handleEdit = (user, i) => {
+    this.setState({ user, isEdit: true, index: i });
+  };
+  handleUpdate = () => {
+    let { index, user } = this.state;
+    let users = [...this.state.users];
+    users[index] = user;
+    this.setState({ users });
+    localStorage.setItem("users", JSON.stringify(users));
+    this.handleClear();
+  };
   render() {
-    let { user, users } = this.state;
+    let { user, users, isEdit } = this.state;
     return (
       <div>
         <form>
@@ -72,9 +101,16 @@ export default class User extends Component {
             }}
           />
           <br />
-          <button type="button" onClick={this.handleSubmit}>
-            Add User
-          </button>
+          {!isEdit && (
+            <button type="button" onClick={this.handleSubmit}>
+              Add User
+            </button>
+          )}
+          {isEdit && (
+            <button type="button" onClick={this.handleUpdate}>
+              Update
+            </button>
+          )}
         </form>
 
         <hr />
@@ -84,6 +120,8 @@ export default class User extends Component {
               <th>First Name </th>
               <th>Last Name</th>
               <th>Email</th>
+              <th>Edit</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -93,6 +131,24 @@ export default class User extends Component {
                   <td>{user.fname}</td>
                   <td>{user.lname}</td>
                   <td>{user.email}</td>
+                  <td>
+                    <button
+                      onClick={() => {
+                        this.handleEdit(user, i);
+                      }}
+                    >
+                      Edit
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      onClick={() => {
+                        this.handleDelete(i);
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </td>
                 </tr>
               );
             })}
